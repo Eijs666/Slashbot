@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//MY VERY OWN AI
+
 public class PlayerMinionAI : MonoBehaviour
 {
     public enum State {turretScouting, baseAttack, minionAttack, enemyAttack};
 
     public State state;
-    
 
     Kunai kunaiScript;
 
@@ -18,7 +19,6 @@ public class PlayerMinionAI : MonoBehaviour
     GameObject turret1;
     GameObject enemyBase;
     
-
     NavMeshAgent agent;
 
     public bool isAttack;
@@ -29,7 +29,6 @@ public class PlayerMinionAI : MonoBehaviour
     public float lookRadius = 10f;
     public float stopRadius = 5f;
     float nextTimeShoot = 0f;
-
 
     private void Awake()
     {
@@ -78,8 +77,6 @@ public class PlayerMinionAI : MonoBehaviour
                 state = State.baseAttack;
             }
         }
-
-
 
         if (turret1 != null)
         {
@@ -158,8 +155,6 @@ public class PlayerMinionAI : MonoBehaviour
                     state = State.baseAttack;
                 }
 
-
-
                 print("Attacking Base!"); 
                // face
 
@@ -187,7 +182,6 @@ public class PlayerMinionAI : MonoBehaviour
 
                 break;
 
-
         }
 
 
@@ -201,8 +195,6 @@ public class PlayerMinionAI : MonoBehaviour
         }
 
     }
-
-
 
     void FaceTarget(Vector3 destination)
      {
